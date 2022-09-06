@@ -22,10 +22,10 @@ for i in range(POST_BLOCK_NUM):
         timer.start_timer()
         userAns = input(f'A{j+1}:')
         time = timer.stop_timer()
-        if(time < 10):
-            counter = counter - 1
         if(userAns == answers[problemSet[j]]):
             isCorrect = True
+            if(time < 10):
+                counter = counter - 1
             print('correct!')
         else:
             isCorrect = False

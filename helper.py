@@ -9,7 +9,7 @@ def get_problem_set(max, size):
 ## open csv file
 topics = []
 answers = []
-with open('nrtProblems.csv', newline='') as csvfile:
+with open('./nrtProblems.csv', newline='') as csvfile:
     rows = csv.reader(csvfile)
     for row in rows:
         topics.append(row[0])
