@@ -5,13 +5,15 @@ recorder = NrtRecorder('',-1,'')
 recorder.get_from_id(input('id? '))
 timer = TimeRecorder()
 
+print(f'Hi, {recorder.name}! Welcome back!')
+
 time = 0.0
 isCorrect = False
 userAns = 0
 print('>>>>>>>>>> post-measurement start')
 ## after test (9 blocks)
 for i in range(POST_BLOCK_NUM):
-    print(f'---------- start block{i+1} (total{POST_BLOCK_NUM}) ----------')
+    print(f'---------- start block{i+1} (total {POST_BLOCK_NUM}) ----------')
     problemSet = get_problem_set(max=TOTAL_PROBLEM_NUM, size=BLOCK_SIZE)
     for j in range(BLOCK_SIZE):
         input('<press enter key to continue>')
