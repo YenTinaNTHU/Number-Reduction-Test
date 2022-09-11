@@ -46,10 +46,10 @@ for i in range(PRE_BLOCK_NUM):
     problemSet = get_problem_set(max=TOTAL_PROBLEM_NUM, size=BLOCK_SIZE)
     for j in range(BLOCK_SIZE):
         input('<press enter key to continue>')
-        print(f'Q{j+1}:{topics[problemSet[j]]}')
+        print(f'Q{i+1}-{j+1}:{topics[problemSet[j]]}')
         recorder.set_on_question('pre', i+1, j+1, problemSet[j])
         timer.start_timer()
-        userAns = input(f'A{j+1}:')
+        userAns = input(f'A{i+1}-{j+1}:')
         time = timer.stop_timer()
         if(userAns == answers[problemSet[j]]):
             isCorrect = True
