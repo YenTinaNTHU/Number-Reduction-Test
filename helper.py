@@ -19,7 +19,7 @@ answers.remove('answer')
 
 ## constants
 TOTAL_PROBLEM_NUM = len(topics)
-TRAIN_PROBLEM_NUM = 2
+TRAIN_PROBLEM_NUM = 10
 BLOCK_SIZE = 30
 PRE_BLOCK_NUM = 2
 POST_BLOCK_NUM = 9

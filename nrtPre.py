@@ -3,7 +3,7 @@ from nrtRecorder import *
 
 name = str(input('name? '))
 age = int(input('age? '))
-gender = str(input('gender? '))
+gender = str(input('gender?(male/female) '))
 
 recorder = NrtRecorder(name, age, gender)
 timer = TimeRecorder()
@@ -15,6 +15,8 @@ recorder.write_subject_data()
 time = 0.0
 isCorrect = False
 userAns = 0
+## TODO: Record the correct rate
+
 
 ## training
 print('---------- start training ----------')
@@ -37,12 +39,12 @@ for i in range(TRAIN_PROBLEM_NUM):
     recorder.write_file()
 print('---------- finish training ----------')
 input('<press enter key to continue>')
-print('---------- pre-measurement start ----------')
+print('>>>>>>>>>> pre-measurement start')
 ## before test (2 blocks)
 for i in range(PRE_BLOCK_NUM):
     print(f'---------- start block{i+1} ----------')
-    problemSet = get_problem_set(max=TOTAL_PROBLEM_NUM, size=TRAIN_PROBLEM_NUM)
-    for j in range(TRAIN_PROBLEM_NUM):
+    problemSet = get_problem_set(max=TOTAL_PROBLEM_NUM, size=BLOCK_SIZE)
+    for j in range(BLOCK_SIZE):
         input('<press enter key to continue>')
         print(f'Q{j+1}:{topics[problemSet[j]]}')
         recorder.set_on_question('pre', i+1, j+1, problemSet[j])
@@ -60,4 +62,4 @@ for i in range(PRE_BLOCK_NUM):
     print(f'---------- finish block{i+1} ----------')
 
 input('<press enter key to continue>')
-print('---------- pre-measurement end ----------')
+print('>>>>>>>>>> pre-measurement end')
